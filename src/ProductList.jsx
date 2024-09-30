@@ -1,8 +1,7 @@
 import React, { useState,useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import './ProductList.css'
 import CartItem from './CartItem';
-import { useDispatch } from 'react-redux';
 import { addItem } from './CartSlice';
 
 function ProductList() {
@@ -83,7 +82,7 @@ function ProductList() {
                 },
                 {
                     name: "Mint",
-                    image: "https://cdn.pixabay.com/photo/2016/01/07/18/16/mint-1126282_1280.jpg",
+                    image: "https://cdn.pixabay.com/photo/2016/07/12/12/23/peppermint-1511845_1280.jpg",
                     description: "Refreshing aroma, used in teas and cooking.",
                     cost: "$12"
                 },
@@ -255,8 +254,7 @@ const handlePlantsClick = (e) => {
     setShowCart(false); // Hide the cart when navigating to About Us
 };
 
-   const handleContinueShopping = (e) => {
-    e.preventDefault();
+   const handleContinueShopping = () => {
     setShowCart(false);
   };
 

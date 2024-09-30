@@ -21,9 +21,8 @@ const CartItem = ({ onContinueShopping }) => {
     }, 0).toFixed(2);
   };
 
-  const handleContinueShopping = (e) => {
-    e.preventDefault();
-    onContinueShopping();
+  const handleContinueShopping = () => {
+    onContinueShopping(); // Call the function passed from the parent component
   };
 
   const handleCheckoutShopping = (e) => {
@@ -77,9 +76,9 @@ const CartItem = ({ onContinueShopping }) => {
         Total Items in Cart: {totalQuantity}
       </div>
       <div className="continue_shopping_btn">
-        <button className="get-started-button" onClick={(e) => handleContinueShopping(e)}>Continue Shopping</button>
+        <button className="get-started-button" onClick={handleContinueShopping}>Continue Shopping</button>
         <br />
-        <button className="get-started-button1" onClick={(e) => handleCheckoutShopping(e)}>Checkout</button>
+        <button className="get-started-button1" onClick={handleCheckoutShopping}>Checkout</button>
       </div>
     </div>
   );
